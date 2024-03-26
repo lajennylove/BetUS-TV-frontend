@@ -1,11 +1,47 @@
 {
   "assets/src/css/app.scss": {
-    "file": "style-BiIGMIox.css",
+    "file": "style-CcHAUwdn.css",
     "src": "assets/src/css/app.scss",
     "isEntry": true
   },
+  "assets/src/fonts/KommissarCondensed-Medium.woff2": {
+    "file": "KommissarCondensed-Medium-DjMhgAzh.woff2",
+    "src": "assets/src/fonts/KommissarCondensed-Medium.woff2"
+  },
+  "assets/src/fonts/Montserrat-Black.woff2": {
+    "file": "Montserrat-Black-COxb-u60.woff2",
+    "src": "assets/src/fonts/Montserrat-Black.woff2"
+  },
+  "assets/src/fonts/Montserrat-Bold.woff2": {
+    "file": "Montserrat-Bold-BlwdSJeU.woff2",
+    "src": "assets/src/fonts/Montserrat-Bold.woff2"
+  },
+  "assets/src/fonts/Montserrat-Regular.woff2": {
+    "file": "Montserrat-Regular-C03LP43R.woff2",
+    "src": "assets/src/fonts/Montserrat-Regular.woff2"
+  },
+  "assets/src/fonts/NexaBlack.otf": {
+    "file": "NexaBlack-DvrP1e1v.otf",
+    "src": "assets/src/fonts/NexaBlack.otf"
+  },
+  "assets/src/fonts/NexaBold.otf": {
+    "file": "NexaBold-8KRYMQxN.otf",
+    "src": "assets/src/fonts/NexaBold.otf"
+  },
+  "assets/src/fonts/NexaHeavy.otf": {
+    "file": "NexaHeavy-zQvVgWFx.otf",
+    "src": "assets/src/fonts/NexaHeavy.otf"
+  },
+  "assets/src/fonts/NexaLight.otf": {
+    "file": "NexaLight-DG1zdEWt.otf",
+    "src": "assets/src/fonts/NexaLight.otf"
+  },
+  "assets/src/fonts/NexaRegular.otf": {
+    "file": "NexaRegular-dVg_Hogy.otf",
+    "src": "assets/src/fonts/NexaRegular.otf"
+  },
   "assets/src/js/app.js": {
-    "file": "app-CHuXgRMf.js",
+    "file": "app-DzMD8or-.js",
     "name": "app",
     "src": "assets/src/js/app.js",
     "isEntry": true

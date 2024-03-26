@@ -1,18 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite Tailwind Vanilla Boilerplate</title>
-
+    
     <!-- REQUIRED // Load js and css files -->
     <script type="module" src="/main.js"></script>
 
+    <!-- Title -->
+    <title>Tailwind Boilerplate</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+<!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+
 </head>
 <body>
+    
+    
+    <header class="">
 
-    <h1>Clean Canvas</h1>
+        <nav x-data="{ isOpen: false }" class="bg-[#000c19] bg-opacity-[0.4] fixed top-0 left-0 w-full z-50 h-20 flex items-center">
+            <div class="container mx-auto max-w-[1920px] px-4 md:px-14 py-6">
+                <div class="md:flex md:items-center md:justify-between">
+                    <div class="navigation flex md:items-center md:space-x-10 justify-between">
+                        <div class="logo">
+                            <a href="/">
+                                <img src= "./assets/src/img/logo.png" />
+                            </a>
+                        </div>
+        <div class="flex items-center">
 
+             <!--Search icon for mobile-->
+
+             <div class='mob_search_icon block md:hidden mr-8'>
+                                
+                <svg id="mobSearchIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M9.16658 16.5C10.7936 16.4997 12.3738 15.955 13.6555 14.9527L17.6852 18.9823L18.9813 17.6862L14.9517 13.6565C15.9545 12.3747 16.4995 10.7941 16.4999 9.16666C16.4999 5.12325 13.21 1.83333 9.16658 1.83333C5.12317 1.83333 1.83325 5.12325 1.83325 9.16666C1.83325 13.2101 5.12317 16.5 9.16658 16.5ZM9.16658 3.66666C12.1998 3.66666 14.6666 6.13341 14.6666 9.16666C14.6666 12.1999 12.1998 14.6667 9.16658 14.6667C6.13334 14.6667 3.66659 12.1999 3.66659 9.16666C3.66659 6.13341 6.13334 3.66666 9.16658 3.66666Z" fill="white"/>
+                </svg>
+              
+            </div>
+      
+                            <!-- Mobile menu button -->
+                            <div class="flex md:hidden">
+                                <button x-cloak @click="isOpen = !isOpen" type="button" class="text-white" aria-label="toggle menu">
+                                    <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+            
+                                    <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                    
+                                </button>
+                            </div>
+
+
+                           
+        
+                        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                        <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute top-20 ml-0 left-0 inset-x-0 z-20 w-full py-4  bg-[#000C19] shadow-md md:bg-transparent md:dark:bg-transparent md:shadow-none dark:bg-gray-900 md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 border border-[#282E38] md:border-none">                            
+                            <ul class="md:flex md:items-center">
+                                <li><a href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/nfl_logo.png" /> <span>NFL</span></a></li>
+                                <li><a href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/ncaaf_logo.png" /> <span>NCAAF</span></a></li>
+                                <li><a href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/nba_logo.png" /> <span>NBA</span></a></li>
+                                <li><a href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/ncaab_logo.png" /> <span>NCAAB</span></a></li>
+                                <li><a href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/ufc_logo.png" /> <span>UFC</span></a></li>
+                                <li class="relative" x-data="{ open: false}"><a @click="open = !open" href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/soccer_logo.png" /> <span id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="inline-flex items-center">Soccer<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg></span></a> 
+                                
+                                    <div @click.away="open = false" x-show="open"  class="absolute z-20 w-60 mt-2 origin-top-right rounded-md shadow-lg border border-[#282E38]">
+                                        <div class=" bg-[#000C19] rounded-md shadow-xs">
+                                            <a href="#" class=" text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/Champions League Icon.png" /> <span>Champions League</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/Premier League Icon.png" /> <span>Premier League</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/LaLiga League Icon .png" /> <span>La Liga</span></a>
+                                            <a href="#" class=" text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/Serie A League Icon.png" /> <span>Serie A</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/World Cup Icon.png" /> <span>World Cup</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/Bundesliga Icon.png" /> <span>Bundesliga</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2"><img class="block ml-4" src ="./assets/src/img/sports_logo/Europa League Icon.png" /> <span>Europa League</span></a>
+                                        </div>
+                                      </div>
+                                    
+                                    </li>
+                                <li class="relative" x-data="{ open: false}"><a @click="open = !open" href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/tennis_logo.png" /> <span id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="inline-flex items-center">More<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg></span></a> 
+                                
+                                    <div @click.away="open = false" x-show="open"  class="absolute z-20 w-60 mt-2 origin-top-right rounded-md shadow-lg border border-[#282E38]">
+                                        <div class=" bg-[#000C19] rounded-md shadow-xs">
+                                            <a href="#" class=" text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/Boxing Icon.png" /> <span>Boxing</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/MLB Icon.png" /> <span>MLB</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/3 Dog Icon.png" /> <span>3 Dog</span></a>
+                                            <a href="#" class=" text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/tennis_logo.png" /> <span>More Sports</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2"><img class="block ml-4" src ="./assets/src/img/sports_logo/how_to_bet.png" /> <span>How to Bet</span></a>
+                                        </div>
+                                      </div>
+                                    
+                                    </li>
+                                </ul>
+
+
+                        </div>
+                    </div>
+    </div>
+                    <div class='desktop_search_icon hidden md:block'>
+                        <div class='flex xl:w-80 max-xl:w-full bg-[#000C19] px-6 py-3 rounded-lg outline outline-transparent text-white border border-[#3F4857]'>
+                            <input id="searchInput" type='text' placeholder='Search ...' class='w-full text-md bg-transparent rounded outline-none pr-2 text-white' />
+                            <svg id="searchIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M9.16658 16.5C10.7936 16.4997 12.3738 15.955 13.6555 14.9527L17.6852 18.9823L18.9813 17.6862L14.9517 13.6565C15.9545 12.3747 16.4995 10.7941 16.4999 9.16666C16.4999 5.12325 13.21 1.83333 9.16658 1.83333C5.12317 1.83333 1.83325 5.12325 1.83325 9.16666C1.83325 13.2101 5.12317 16.5 9.16658 16.5ZM9.16658 3.66666C12.1998 3.66666 14.6666 6.13341 14.6666 9.16666C14.6666 12.1999 12.1998 14.6667 9.16658 14.6667C6.13334 14.6667 3.66659 12.1999 3.66659 9.16666C3.66659 6.13341 6.13334 3.66666 9.16658 3.66666Z" fill="white"/>
+                            </svg>
+                            <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" style="display:none; cursor:pointer;">
+                                <path d="M16.5 16.5L5.5 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5 5.5L5.5 16.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                      
+                </div>
+                
+            </div>
+        </nav>
+        
+
+
+ <section class="absolute top-0 w-full h-[800px]">
+       <div class="swiper mySwiper h-full bg-purple-500">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide h-full relative">
+            <div class="video-overlay flex justify-center items-center absolute top-0 left-0 w-2/5 h-full text-white px-8">
+                <div class="text-container">
+                    <h2 class="text-5xl font-nexabold font-bold mb-4">NFL Week 11 Picks & Predictions</h2>
+                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor est nec tellus ultrices, ut varius felis dictum. Sed cursus fringilla est, non viverra arcu.</p>
+                    <a href="#" class="text-lg font-bold underline">Watch Now</a>
+                </div>
+            </div>
+            <video class="h-[800px] w-full object-cover" muted autoplay>
+                <source src="https://umings.github.io/images/video4.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="swiper-slide h-full relative">
+            <div class="video-overlay flex justify-center items-center absolute top-0 left-0 w-1/5 h-full text-white px-8">
+                <div class="text-container">
+                    <h2 class="text-5xl font-nexabold font-bold mb-4">NFL Week 11 Picks & Predictions</h2>
+                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor est nec tellus ultrices, ut varius felis dictum. Sed cursus fringilla est, non viverra arcu.</p>
+                    <a href="#" class="text-lg font-bold underline">Watch Now</a>
+                </div>
+            </div>
+            <video class="h-[800px] w-full object-cover" muted autoplay>
+                <source src="https://umings.github.io/images/video3.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="swiper-slide h-full relative">
+            <div class="video-overlay flex justify-center items-center absolute top-0 left-0 w-1/5 h-full text-white px-8">
+                <div class="text-container">
+                    <h2 class="text-3xl font-bold mb-4">Heading 1</h2>
+                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor est nec tellus ultrices, ut varius felis dictum. Sed cursus fringilla est, non viverra arcu.</p>
+                    <a href="#" class="text-lg font-bold underline">Watch Now</a>
+                </div>
+            </div>
+            <video class="h-[800px] w-full object-cover" muted autoplay>
+                <source src="https://umings.github.io/images/video4.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="swiper-slide h-full relative">
+            <div class="video-overlay flex justify-center items-center absolute top-0 left-0 w-1/5 h-full text-white px-8">
+                <div class="text-container">
+                    <h2 class="text-3xl font-bold mb-4">Heading 1</h2>
+                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor est nec tellus ultrices, ut varius felis dictum. Sed cursus fringilla est, non viverra arcu.</p>
+                    <a href="#" class="text-lg font-bold underline">Watch Now</a>
+                </div>
+            </div>
+            <video class="h-[800px] w-full object-cover" muted autoplay>
+                <source src="https://umings.github.io/images/video1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+
+    </section>
+    </header>
+       
+
+
+    <!--Tiny slider-->
+
+
+   <div class="container mt-[800px] mb-10 max-w-[1430px] ml-auto">
+  <div class="my-slider">
+    <div class="bg-[#101923] rounded-xl w-[194px] h-[173px] flex justify-center items-center"><img class="block mx-auto" src="./assets/src/img/logo_slider/nfl.png"  alt=""></div>
+    <img src="./assets/src/img/logo_slider/ncaaf.png" alt="">
+    <img src="./assets/src/img/logo_slider/nba.png" alt="">
+    <img src="./assets/src/img/logo_slider/ncaab.png" alt="">
+    <img src="./assets/src/img/logo_slider/ufc.png" alt="">
+    <img src="./assets/src/img/logo_slider/europa-league.png" alt="">
+    <img src="./assets/src/img/logo_slider/la-liga.png" alt="">
+    <img src="./assets/src/img/logo_slider/serie-a.png" alt="">
+
+  </div>
+</div>
+<!-- or ul.my-slider > li -->
+
+
+
+
+
+<div class="next_container">Hello</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<!-- NOTE: prior to v2.2.1 tiny-slider.js need to be in <body> -->
+
+
+
+
+    <!--Swiper js-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   
+    <!-- Custom Scripts -->
+    <script src="./js/app.js"></script>
+    
+    
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const searchIcon = document.getElementById('searchIcon');
+        const closeIcon = document.getElementById('closeIcon');
+    
+        searchInput.addEventListener('input', function() {
+            if (searchInput.value.trim() !== '') {
+                searchIcon.style.display = 'none';
+                closeIcon.style.display = 'inline-block';
+            } else {
+                searchIcon.style.display = 'inline-block';
+                closeIcon.style.display = 'none';
+            }
+        });
+    
+        closeIcon.addEventListener('click', function() {
+            searchInput.value = '';
+            searchIcon.style.display = 'inline-block';
+            closeIcon.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
