@@ -43,22 +43,111 @@
   src: url(../fonts/KommissarCondensed-Medium.woff2);
 }
 
-.tns-outer {
+.tiny-slider-wrap .tns-outer,
+.shows_outer_container {
   position: relative;
 }
-[data-controls] {
+
+.tiny-slider-wrap [data-controls],
+.shows_outer_container [data-controls] {
   border: 0;
   padding: 0;
   font-size: 30px;
   position: absolute;
   top: 50%;
   margin-top: -18px;
-  z-index: 1;
+  z-index: 1000;
   background: transparent;
 }
-[data-controls="prev"] {
+.tiny-slider-wrap [data-controls="prev"],
+.shows_outer_container [data-controls="prev"] {
   left: 20px;
 }
-[data-controls="next"] {
-  right: 20px;
+.tiny-slider-wrap [data-controls="next"],
+.shows_outer_container [data-controls="next"] {
+  right: 80px;
+}
+
+.outer_container_shadow {
+  margin-top: 30px;
+  position: relative;
+}
+
+.outer_container_shadow:before,
+.tiny_container_shadow:before {
+  background-image: url(../img/shadow.png);
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 100%;
+  position: absolute;
+  right: -2px;
+  width: 30%;
+  z-index: 10;
+}
+
+.outer_container_shadow .tns-controls {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  top: -40px;
+  z-index: 10;
+}
+
+.outer_container_shadow [data-controls="next"] {
+  margin-left: 20px;
+}
+
+.outer_container_shadow .tns-controls {
+  padding-right: 80px;
+}
+
+.outer_container_shadow .tns-nav {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  [data-controls="prev"],
+  [data-controls="next"] {
+    width: 30px;
+  }
+
+  .outer_container_shadow .tns-controls {
+    top: -28px;
+  }
+}
+
+.welcome_hub {
+  background-image: url("/assets/src/img/shades.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+@media (max-width: 991px) {
+  .welcome_hub {
+    background-image: url("/assets/src/img/shades-mob.png");
+    background-position: center left;
+  }
+}
+
+/* .swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+/* .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  height: calc((100% - 30px) / 2) !important;
+
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.swiper-slide {
+  width: 100%;
 }

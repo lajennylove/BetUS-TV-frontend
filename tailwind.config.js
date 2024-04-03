@@ -20,7 +20,7 @@ module.exports = {
       mb: "400px",
       xs: "500px",
       sm: "600px",
-      md: "1024px",
+      md: "992px",
       lg: "1280px",
       "custom-lg": "992px",
       "custom-2xlg": "1200px",
@@ -81,6 +81,9 @@ module.exports = {
       width: {
         593: "593px",
       },
+    },
+    dropShadow: {
+      logoShadow: "0px 0px 31.1px 0px rgba(255, 255, 255, 0.29)",
     },
   },
 
