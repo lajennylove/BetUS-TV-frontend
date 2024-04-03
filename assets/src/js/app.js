@@ -21,6 +21,28 @@ function domReady(fn) {
 domReady(() => {
   console.log("The Dom is ready! 🚀");
 
+  /** Search bar in navigation js */
+  const searchInput = document.getElementById("searchInput");
+  const searchIcon = document.getElementById("searchIcon");
+  const closeIcon = document.getElementById("closeIcon");
+
+  searchInput.addEventListener("input", function () {
+    if (searchInput.value.trim() !== "") {
+      searchIcon.style.display = "none";
+      closeIcon.style.display = "inline-block";
+    } else {
+      searchIcon.style.display = "inline-block";
+      closeIcon.style.display = "none";
+    }
+  });
+
+  closeIcon.addEventListener("click", function () {
+    searchInput.value = "";
+    searchIcon.style.display = "inline-block";
+    closeIcon.style.display = "none";
+  });
+
+  /** slider for home page header */
   var swiper = new Swiper(".mySwiper", {
     pagination: {
       el: ".swiper-pagination",

@@ -623,8 +623,8 @@
             
         </div>
 
-         <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+         <div class="swiper-button-next"><img src="/assets/src/img/next_icon.png" alt="next icon"></div>
+        <div class="swiper-button-prev"><img src="/assets/src/img/prev_icon.png" alt="previous icon"></div>
       
     </div>
 </div>
@@ -672,7 +672,7 @@ It's time to take your passion for sports to the next level. Start exploring now
 
 
 <!--### FAQ Block###-->
-<div class="faq_container mt-10">
+<div class="faq_container mt-10 mb-16">
     <h2 class="text-white font-nexabold text-base xs:text-3xl font-black text-center">FAQ</h2>
     <div class="space-y-4 mt-12 max-w-[828px] mx-auto px-2">
     <details class="bg-[#001934] p-6 group rounded-xl" open>
@@ -802,8 +802,60 @@ It's time to take your passion for sports to the next level. Start exploring now
 
 
 
+<!--### Footer ###-->
+<footer class="footer bg-[#001934] py-8 px-2">
+    <div class="footer_block max-w-[1430px] mx-auto">
+        <div class="footer_first_block flex flex-wrap justify-between">
+            <div class="w-full md:w-[165px]"><img src="/assets/src/img/logo.png" alt="logo image"></div>
+            
+            <ul class="first_nav font-nexaregular font-black text-white space-y-5 w-1/2 md:w-[15%] mt-6 md:mt-0">
+                <li><a href="#">NFL</a></li>
+                <li><a href="#">NCAAF</a></li>
+                <li><a href="#">NBA</a></li>
+                <li><a href="#">NCAAB</a></li>
+                <li><a href="#">UFC</a></li>
+            </ul>
+
+            <ul class="second_nav font-nexaregular font-black text-white space-y-5 w-1/2 md:w-[15%] mt-6 md:mt-0">
+                <li><a href="#">Champions League</a></li>
+                <li><a href="#">Premier League</a></li>
+                <li><a href="#">La Liga</a></li>
+                <li><a href="#">Serie A</a></li>
+            </ul>
+
+            <ul class="third_nav font-nexaregular font-black text-white space-y-5 w-1/2 md:w-[15%] mt-6 md:mt-0">
+                <li><a href="#">World Cup</a></li>
+                <li><a href="#">Bundesliga</a></li>
+                <li><a href="#">Europa League</a></li>
+                <li><a href="#">Boxing</a></li>
+            </ul>
 
 
+            <ul class="last_nav font-nexaregular font-black text-white space-y-5 w-1/2 md:w-[15%] mt-6 md:mt-0">
+                <li><a href="#">MLB</a></li>
+                <li><a href="#">3 Dog</a></li>
+                <li><a href="#">More Sports</a></li>
+                <li><a href="#">How to Bet</a></li>
+            </ul>
+
+
+            <div class="social-icons flex space-x-6 w-1/2 md:w-[10%] mt-6 md:mt-0">
+                <a href=""><img src="/assets/src/img/youtube_icon.png" alt="youtube icon"></a>
+                <a href=""><img src="/assets/src/img/twitter_icon.png" alt="twitter icon"></a>
+                <a href=""><img src="/assets/src/img/facebook_icon.png" alt="facebook icon"></a>
+            </div>
+
+
+        </div>
+
+        <div class="second_block mt-6 text-[#AFB9CB] font-roboto text-[12px] leading-[18px]">
+            <p>© 1994 - 2022 BetUS.. All Rights Reserved The BetUS Brand and Logo are trademarks of BetUS. 
+            BetUS is a premier online sportsbook and gambling destination. BetUS is a fully licensed sportsbook providing a 
+            reliable and secure sports betting service to millions of satisfied online betting customers world wide since 1994. 
+            BetUS offers football betting, live and NFL odds all season long.</p>
+        </div>
+    </div>
+</footer>
 
 
 
@@ -838,26 +890,6 @@ It's time to take your passion for sports to the next level. Start exploring now
     <script src="./js/app.js"></script>
     
     
-    <script>
-        const searchInput = document.getElementById('searchInput');
-        const searchIcon = document.getElementById('searchIcon');
-        const closeIcon = document.getElementById('closeIcon');
-    
-        searchInput.addEventListener('input', function() {
-            if (searchInput.value.trim() !== '') {
-                searchIcon.style.display = 'none';
-                closeIcon.style.display = 'inline-block';
-            } else {
-                searchIcon.style.display = 'inline-block';
-                closeIcon.style.display = 'none';
-            }
-        });
-    
-        closeIcon.addEventListener('click', function() {
-            searchInput.value = '';
-            searchIcon.style.display = 'inline-block';
-            closeIcon.style.display = 'none';
-        });
-    </script>
+  
 </body>
 </html>
