@@ -74,43 +74,49 @@ domReady(() => {
     },
   });
 
-  let slider2 = tns({
-    container: ".lives-slider",
-    controlsText: [
-      '<img src="/assets/src/img/prev_icon.png" />',
-      '<img src="/assets/src/img/next_icon.png" />',
-    ],
-    fixedWidth: 285,
-    gutter: 10,
-    loop: true,
-    mouseDrag: true,
-    controls: true,
-    responsive: {
-      992: {
-        fixedWidth: 406,
-        gutter: 10,
-      },
-    },
-  });
+  // Check if the element with class "lives-slider" exists
+  var livesSliderExist = document.querySelector(".lives-slider");
 
-  let slider3 = tns({
-    container: ".shorts-slider",
-    controlsText: [
-      '<img src="/assets/src/img/prev_icon.png" />',
-      '<img src="/assets/src/img/next_icon.png" />',
-    ],
-    fixedWidth: 285,
-    gutter: 10,
-    loop: true,
-    mouseDrag: true,
-    controls: true,
-    /*  responsive: {
-       992: {
-         fixedWidth: 406,
-         gutter: 10,
-       },
-     }, */
-  });
+  // If the element exists, initialize the slider
+  if (livesSliderExist) {
+    let slider2 = tns({
+      container: ".lives-slider",
+      controlsText: [
+        '<img src="/assets/src/img/prev_icon.png" />',
+        '<img src="/assets/src/img/next_icon.png" />',
+      ],
+      fixedWidth: 285,
+      gutter: 10,
+      loop: true,
+      mouseDrag: true,
+      controls: true,
+      responsive: {
+        992: {
+          fixedWidth: 406,
+          gutter: 10,
+        },
+      },
+    });
+  }
+
+  // Check if the element with class "shorts-slider" exists
+  var shortsSliderExist = document.querySelector(".shorts-slider");
+
+  // If the element exists, initialize the slider
+  if (shortsSliderExist) {
+    let slider3 = tns({
+      container: ".shorts-slider",
+      controlsText: [
+        '<img src="/assets/src/img/prev_icon.png" />',
+        '<img src="/assets/src/img/next_icon.png" />',
+      ],
+      fixedWidth: 285,
+      gutter: 10,
+      loop: true,
+      mouseDrag: true,
+      controls: true,
+    });
+  }
 
   /*  let slider4 = tns({
     container: ".shows-slider",
@@ -142,7 +148,42 @@ domReady(() => {
     },
   });
 
-  /** script for load more button */
+  /**
+   * Latest Videos Slider show Page
+   */
+
+  // Check if the element with class "latest-videos-slider" exists
+  var latestVideosSliderExist = document.querySelector(".latest-videos-slider");
+
+  // If the element exists, initialize the slider
+  if (latestVideosSliderExist) {
+    var latest_videos_slider = tns({
+      container: ".latest-videos-slider",
+      items: 2,
+      fixedWidth: 343,
+      gutter: 10,
+      center: true,
+      loop: false,
+      swipeAngle: false,
+      speed: 400,
+      mouseDrag: true,
+      controlsText: [
+        '<img src="/assets/src/img/prev_icon.png" />',
+        '<img src="/assets/src/img/next_icon.png" />',
+      ],
+      controls: true,
+      responsive: {
+        992: {
+          fixedWidth: 934,
+          gutter: 20,
+        },
+      },
+    });
+  }
+
+  /** script for load more button Home page and Show Page
+   * Discover the Best Sport Block
+   */
   const moreTextEl = document.getElementById("more-text");
   const toggleBtnEl = document.getElementById("toggle-btn");
   const hideBtnEl = document.getElementById("hide-btn");
@@ -162,5 +203,31 @@ domReady(() => {
     contentBlk.classList.toggle("line-clamp-6");
   });
 
-  /*** Home page FAQ */
+  /***
+   * Show page banner show more/less
+   * content
+   * */
+  const show_content = document.getElementById("show_content_block_banner");
+  if (show_content) {
+    const button = document.createElement("button");
+    show_content.append(button);
+    button.append("Show More");
+    button.setAttribute("id", "height-show-more");
+    const moreContentBtn = document.getElementById("height-show-more");
+    const contentClass = document.getElementById("content_height");
+
+    moreContentBtn.addEventListener("click", () => {
+      contentClass.classList.toggle("line-clamp-4");
+      contentClass.classList.toggle("h-[95px]");
+      if (button.innerHTML === "Show More") {
+        button.innerHTML = "Show Less";
+      } else {
+        button.innerHTML = "Show More";
+      }
+    });
+  }
+
+  /***
+   * Load more Game previews in show page
+   */
 });

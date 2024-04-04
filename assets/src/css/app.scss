@@ -44,27 +44,33 @@
 }
 
 .tiny-slider-wrap .tns-outer,
-.shows_outer_container {
+.shows_outer_container,
+.latest_videos_outer {
   position: relative;
 }
 
 .tiny-slider-wrap [data-controls],
-.shows_outer_container [data-controls] {
+.shows_outer_container [data-controls],
+.latest_videos_outer [data-controls] {
   border: 0;
   padding: 0;
   font-size: 30px;
   position: absolute;
   top: 50%;
-  margin-top: -18px;
+  /*  margin-top: -18px; */
   z-index: 1000;
   background: transparent;
 }
+
 .tiny-slider-wrap [data-controls="prev"],
-.shows_outer_container [data-controls="prev"] {
+.shows_outer_container [data-controls="prev"],
+.latest_videos_outer [data-controls="prev"] {
   left: 20px;
 }
+
 .tiny-slider-wrap [data-controls="next"],
-.shows_outer_container [data-controls="next"] {
+.shows_outer_container [data-controls="next"],
+.latest_videos_outer [data-controls="next"] {
   right: 80px;
 }
 
@@ -87,7 +93,7 @@
   z-index: 10;
 }
 
-.outer_container_shadow .tns-controls {
+.top_arrows .tns-controls {
   display: flex;
   justify-content: end;
   position: relative;
@@ -95,15 +101,15 @@
   z-index: 10;
 }
 
-.outer_container_shadow [data-controls="next"] {
+.top_arrows [data-controls="next"] {
   margin-left: 20px;
 }
 
-.outer_container_shadow .tns-controls {
+.top_arrows .tns-controls {
   padding-right: 80px;
 }
 
-.outer_container_shadow .tns-nav {
+.top_arrows .tns-nav {
   display: none;
 }
 
@@ -113,7 +119,7 @@
     width: 30px;
   }
 
-  .outer_container_shadow .tns-controls {
+  .top_arrows .tns-controls {
     top: -28px;
   }
 }
@@ -155,4 +161,37 @@
 .swiper-button-next::after,
 .swiper-button-prev::after {
   content: "";
+}
+
+/**
+show page Latest videos slider control 
+
+**/
+
+.latest-videos-slider iframe {
+  position: relative;
+  height: 534px;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .latest-videos-slider iframe {
+    height: 193px;
+  }
+
+  .latest_videos_outer [data-controls] {
+    position: relative;
+  }
+
+  .latest_videos_outer [data-controls="next"] {
+    right: 0;
+  }
+
+  .latest_videos_outer .tns-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 35px;
+    padding-right: 20px;
+    margin-top: -25px;
+  }
 }
