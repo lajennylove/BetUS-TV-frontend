@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- REQUIRED // Load js and css files -->
+    <script type="module" src="/main.js"></script>
+
+    <!-- Title -->
+    <title>Tailwind Boilerplate</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+
+</head>
+<body class="bg-black">
+    
+    
+    <header class="">
+
+        <nav x-data="{ isOpen: false }" class="bg-[#000c19] bg-opacity-[0.4] fixed top-0 left-0 w-full z-50 h-20 flex items-center">
+            <div class="container mx-auto max-w-[1920px] px-4 md:px-14 py-6">
+                <div class="md:flex md:items-center md:justify-between">
+                    <div class="navigation flex md:items-center md:space-x-10 justify-between">
+                        <div class="logo">
+                            <a href="/">
+                                <img src= "./assets/src/img/logo.png" />
+                            </a>
+                        </div>
+        <div class="flex items-center">
+
+             <!--Search icon for mobile-->
+
+             <div class='mob_search_icon block md:hidden mr-8'>
+                                
+                <svg id="mobSearchIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M9.16658 16.5C10.7936 16.4997 12.3738 15.955 13.6555 14.9527L17.6852 18.9823L18.9813 17.6862L14.9517 13.6565C15.9545 12.3747 16.4995 10.7941 16.4999 9.16666C16.4999 5.12325 13.21 1.83333 9.16658 1.83333C5.12317 1.83333 1.83325 5.12325 1.83325 9.16666C1.83325 13.2101 5.12317 16.5 9.16658 16.5ZM9.16658 3.66666C12.1998 3.66666 14.6666 6.13341 14.6666 9.16666C14.6666 12.1999 12.1998 14.6667 9.16658 14.6667C6.13334 14.6667 3.66659 12.1999 3.66659 9.16666C3.66659 6.13341 6.13334 3.66666 9.16658 3.66666Z" fill="white"/>
+                </svg>
+              
+            </div>
+      
+                            <!-- Mobile menu button -->
+                            <div class="flex md:hidden">
+                                <button x-cloak @click="isOpen = !isOpen" type="button" class="text-white" aria-label="toggle menu">
+                                    <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+            
+                                    <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                    
+                                </button>
+                            </div>
+
+
+                           
+        
+                        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                        <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute top-20 ml-0 left-0 inset-x-0 z-20 w-full py-4  bg-[#000C19] shadow-md md:bg-transparent md:dark:bg-transparent md:shadow-none dark:bg-gray-900 md:mt-0 md:p-0 md:top-0 md:relative md:w-auto md:opacity-100 md:translate-x-0 border border-[#282E38] md:border-none">                            
+                            <ul class="md:flex md:items-center">
+                                <li><a href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/nfl_logo.png" /> <span>NFL</span></a></li>
+                                <li><a href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/ncaaf_logo.png" /> <span>NCAAF</span></a></li>
+                                <li><a href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/nba_logo.png" /> <span>NBA</span></a></li>
+                                <li><a href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/ncaab_logo.png" /> <span>NCAAB</span></a></li>
+                                <li><a href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/ufc_logo.png" /> <span>UFC</span></a></li>
+                                <li class="relative" x-data="{ open: false}"><a @click="open = !open" href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 border-b border-[#282E38] md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/soccer_logo.png" /> <span id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="inline-flex items-center">Soccer<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg></span></a> 
+                                
+                                    <div @click.away="open = false" x-show="open"  class="absolute z-20 w-60 mt-2 origin-top-right rounded-md shadow-lg border border-[#282E38]">
+                                        <div class=" bg-[#000C19] rounded-md shadow-xs">
+                                            <a href="#" class=" text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/Champions League Icon.png" /> <span>Champions League</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/Premier League Icon.png" /> <span>Premier League</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/LaLiga League Icon .png" /> <span>La Liga</span></a>
+                                            <a href="#" class=" text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/Serie A League Icon.png" /> <span>Serie A</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/World Cup Icon.png" /> <span>World Cup</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/Bundesliga Icon.png" /> <span>Bundesliga</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2"><img class="block ml-4" src ="./assets/src/img/sports_logo/Europa League Icon.png" /> <span>Europa League</span></a>
+                                        </div>
+                                      </div>
+                                    
+                                    </li>
+                                <li class="relative" x-data="{ open: false}"><a @click="open = !open" href="#" class=" mx-0 md:mx-4 text-white capitalize font-nexaregular text-base font-black flex space-x-5 py-4 md:py-0 md:border-none"><img class="block md:hidden ml-4" src ="./assets/src/img/sports_logo/tennis_logo.png" /> <span id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="inline-flex items-center">More<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg></span></a> 
+                                
+                                    <div @click.away="open = false" x-show="open"  class="absolute z-20 w-60 mt-2 origin-top-right rounded-md shadow-lg border border-[#282E38]">
+                                        <div class=" bg-[#000C19] rounded-md shadow-xs">
+                                            <a href="#" class=" text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/Boxing Icon.png" /> <span>Boxing</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/MLB Icon.png" /> <span>MLB</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/3 Dog Icon.png" /> <span>3 Dog</span></a>
+                                            <a href="#" class=" text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2  border-b border-[#282E38]"><img class="block ml-4" src ="./assets/src/img/sports_logo/tennis_logo.png" /> <span>More Sports</span></a>
+                                            <a href="#" class="  text-white capitalize font-nexaregular text-base font-black flex items-center space-x-5 py-2"><img class="block ml-4" src ="./assets/src/img/sports_logo/how_to_bet.png" /> <span>How to Bet</span></a>
+                                        </div>
+                                      </div>
+                                    
+                                    </li>
+                                </ul>
+
+
+                        </div>
+                    </div>
+    </div>
+                    <div class='desktop_search_icon hidden md:block'>
+                        <div class='flex xl:w-80 max-xl:w-full bg-[#000C19] px-6 py-3 rounded-lg outline outline-transparent text-white border border-[#3F4857]'>
+                            <input id="searchInput" type='text' placeholder='Search ...' class='w-full text-md bg-transparent rounded outline-none pr-2 text-white' />
+                            <svg id="searchIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M9.16658 16.5C10.7936 16.4997 12.3738 15.955 13.6555 14.9527L17.6852 18.9823L18.9813 17.6862L14.9517 13.6565C15.9545 12.3747 16.4995 10.7941 16.4999 9.16666C16.4999 5.12325 13.21 1.83333 9.16658 1.83333C5.12317 1.83333 1.83325 5.12325 1.83325 9.16666C1.83325 13.2101 5.12317 16.5 9.16658 16.5ZM9.16658 3.66666C12.1998 3.66666 14.6666 6.13341 14.6666 9.16666C14.6666 12.1999 12.1998 14.6667 9.16658 14.6667C6.13334 14.6667 3.66659 12.1999 3.66659 9.16666C3.66659 6.13341 6.13334 3.66666 9.16658 3.66666Z" fill="white"/>
+                            </svg>
+                            <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" style="display:none; cursor:pointer;">
+                                <path d="M16.5 16.5L5.5 5.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5 5.5L5.5 16.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                      
+                </div>
+                
+            </div>
+        </nav>
+        
+    </header>
+    
+
+    <section class="video_main_section max-w-[1478px] mx-auto px-6 lg:px-2 mt-24">
+        <div class="page_content_block">
+            
+            
+            <div class="page_section">
+                <div class="max-w-[1478px] lg:grid grid-cols-3 gap-y-[56px] gap-x-20">
+
+                    <div class="image_heading_block max-w-[948px] col-span-2 row-span-1">
+                        <div class="breadcrumbs font-roboto text-base leading-6 text-[#8E9AB0] mb-8">
+                            <p><span>Home</span> &gt; <span>The NFL show</span> &gt; <span>Los Angeles Chargers vs Los Angeles Rams: Preview & Picks 12/05/2022</span></p>
+                        </div>
+                        <div class="rounded-2xl border border-[#4B5567] overflow-hidden w-full">
+                        <iframe src="https://www.youtube.com/embed/JU2SafReljc?si=QMhmSpaS0cxsCux0&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="date_share flex justify-between mt-5">
+                        <p class="text-[#9EAABE] font-roboto text-balance font-normal">November 15, 2023</p>
+                        <a href="#" class="block text-white font-nexaheavy font-black text-sm"><img src="/assets/src/img/share_show_icon.png" alt="share icon"> <span>Share</span></a>
+                    </div>
+
+                    <h1 class="font-nexaheavy font-black text-[24px] md:text-[32px] text-white mb-4">Los Angeles Chargers vs Los Angeles Rams: Preview & Picks 12/05/2022</h1>
+                    </div>
+
+                    <div class="sidebar lg:max-w-[346px] col-span-1 row-span-2">
+                <h2 class="text-white font-nexaheavy text-[24px] font-black mt-0 mb-8">Related Videos</h2>
+                <div class="sidebar_blocks">
+                    <div class="related_block max-w-[346px] mx-auto sm:mx-0 font-roboto space-y-2 mb-8">
+                        <div class="sm:h-[195px] border border-[#4B5567] rounded-xl overflow-hidden"><img class="w-full" src="/assets/src/img/preview_1.png" alt="preview thumbnail"></div>
+                        <p class="text-[#7F8BA3] text-[12px] leading-[18px] uppercase">November 15, 2023</p>
+                        <h6 class="text-white text-base font-bold leading-6 line-clamp-1">Predictions & Analysis: Jets vs Bills 11-19-2024</h6>
+                        <p class="text-[#7F8BA3] text-sm leading-[21px] font-normal line-clamp-1">The Jets will try to get their second win of the year against the Bills. The Bills will hope to bounce back after</p>
+                    </div>
+
+                    <div class="related_block max-w-[346px] mx-auto sm:mx-0 font-roboto space-y-2 mb-8">
+                        <div class=" sm:h-[195px] border border-[#4B5567] rounded-xl overflow-hidden"><img class="w-full" src="/assets/src/img/preview_1.png" alt="preview thumbnail"></div>
+                        <p class="text-[#7F8BA3] text-[12px] leading-[18px] uppercase">November 15, 2023</p>
+                        <h6 class="text-white text-base font-bold leading-6 line-clamp-1">Predictions & Analysis: Jets vs Bills 11-19-2024</h6>
+                        <p class="text-[#7F8BA3] text-sm leading-[21px] font-normal line-clamp-1">The Jets will try to get their second win of the year against the Bills. The Bills will hope to bounce back after</p>
+                    </div>
+
+                    <div class="related_block max-w-[346px] mx-auto sm:mx-0 font-roboto space-y-2 mb-8">
+                        <div class=" sm:h-[195px] border border-[#4B5567] rounded-xl overflow-hidden"><img class="w-full" src="/assets/src/img/preview_1.png" alt="preview thumbnail"></div>
+                        <p class="text-[#7F8BA3] text-[12px] leading-[18px] uppercase">November 15, 2023</p>
+                        <h6 class="text-white text-base font-bold leading-6 line-clamp-1">Predictions & Analysis: Jets vs Bills 11-19-2024</h6>
+                        <p class="text-[#7F8BA3] text-sm leading-[21px] font-normal line-clamp-1">The Jets will try to get their second win of the year against the Bills. The Bills will hope to bounce back after</p>
+                    </div>
+
+                    <div class="related_block max-w-[346px] mx-auto sm:mx-0 font-roboto space-y-2 mb-8">
+                        <div class=" sm:h-[195px] border border-[#4B5567] rounded-xl overflow-hidden"><img class="w-full" src="/assets/src/img/preview_1.png" alt="preview thumbnail"></div>
+                        <p class="text-[#7F8BA3] text-[12px] leading-[18px] uppercase">November 15, 2023</p>
+                        <h6 class="text-white text-base font-bold leading-6 line-clamp-1">Predictions & Analysis: Jets vs Bills 11-19-2024</h6>
+                        <p class="text-[#7F8BA3] text-sm leading-[21px] font-normal line-clamp-1">The Jets will try to get their second win of the year against the Bills. The Bills will hope to bounce back after</p>
+                    </div>
+
+                    <div class="related_block max-w-[346px] mx-auto sm:mx-0 font-roboto space-y-2 mb-8">
+                        <div class="sm:h-[195px] border border-[#4B5567] rounded-xl overflow-hidden"><img class="w-full" src="/assets/src/img/preview_1.png" alt="preview thumbnail"></div>
+                        <p class="text-[#7F8BA3] text-[12px] leading-[18px] uppercase">November 15, 2023</p>
+                        <h6 class="text-white text-base font-bold leading-6 line-clamp-1">Predictions & Analysis: Jets vs Bills 11-19-2024</h6>
+                        <p class="text-[#7F8BA3] text-sm leading-[21px] font-normal line-clamp-1">The Jets will try to get their second win of the year against the Bills. The Bills will hope to bounce back after</p>
+                    </div>
+                </div>
+                    </div>
+                    
+                    <div class="page_second_block max-w-[948px] col-span-2 row-span-1 ">
+                    <div class="game_preview max-w-[948px]">
+                        <h2 class="text-white font-nexaheavy font-black text-[24px] mb-6">Game Preview</h2>
+                        <div class="font-roboto text-[18px] text-[#AFB9CB] leading-[27px] space-y-2">
+                            <p>This Sunday at Highmark Stadium, the New York Jets (4-5, third in the AFC East) take on 
+                            the Buffalo Bills (5-5, second in the AFC East), who present a formidable test.</p>
+                            <p>The Buffalo Bills, who now have a 5-5 record, have played well in spite of their recent defeats by Cincinnati and Denver. 
+                            The Jets will put the capacity to recover to the test. Josh Allen, Buffalo’s starting quarterback, leads the team offensively 
+                            with 2600 yards, 19 touchdowns, and 11 interceptions.</p>
+                            <p>The squad is eighth in the NFL in both total yards and points per contest with 86.5, 
+                                and Stefon Diggs, the wide receiver, with 868 reception yards and 7 touchdowns, has been a major contributor.</p>
+                            <p>The Bills are 13th in the NFL in terms of rushing yards per contest with 116.5, and with James Cook leading the way with 615 yards. 
+                            Buffalo is ranked 12th in passing yards surrendered with 215.40 yards per game, and 5th in points surrendered with 18.4 per match, 
+                            in terms of defense.</p>
+                            <img src="./assets/src/img/banner_page.png" alt="image">
+                            <p>This Sunday at Highmark Stadium, the New York Jets (4-5, third in the AFC East) take on 
+                            the Buffalo Bills (5-5, second in the AFC East), who present a formidable test.</p>
+                            <p>The Buffalo Bills, who now have a 5-5 record, have played well in spite of their recent defeats by Cincinnati and Denver. 
+                            The Jets will put the capacity to recover to the test. Josh Allen, Buffalo’s starting quarterback, leads the team offensively 
+                            with 2600 yards, 19 touchdowns, and 11 interceptions.</p>
+                            <p>The squad is eighth in the NFL in both total yards and points per contest with 86.5, 
+                                and Stefon Diggs, the wide receiver, with 868 reception yards and 7 touchdowns, has been a major contributor.</p>
+                            <p>The Bills are 13th in the NFL in terms of rushing yards per contest with 116.5, and with James Cook leading the way with 615 yards. 
+                            Buffalo is ranked 12th in passing yards surrendered with 215.40 yards per game, and 5th in points surrendered with 18.4 per match, 
+                            in terms of defense.</p>   
+                        </div>
+                    </div>
+                    
+                    <div class="game_info_block my-14">
+                        <h3 class="font-nexaheavy font-black text-[24px] text-white mb-6">New York Jets vs Buffalo Bills Game Information</h3>
+                        <div class="blocks_container flex flex-wrap gap-2 sm:gap-4 items-center w-full max-w-[991px]">
+                            <div class="date_time border border-[#97CDFF] w-[48%] sm:w-[225px] min-h-[228px] py-6 px-4 rounded-2xl" style="background: radial-gradient(38.93% 38.36% at 23.7% 22.08%, #003655 0%, #071F2E 55.22%, #091821 100%);">
+                                <figure class="text-[#AFB9CB] font-roboto text-[18px] leading-[27px] font-normal space-y-6">
+                                    <img src="./assets/src/img/type=calendar.png" alt="icon">
+                                    <figcaption>Date & Time</figcaption>
+                                </figure>
+                                <h6 class="text-white font-nexaheavy font-black flex flex-col leading-[25px] mt-3"><span>11/19/2023</span><span>04:25 PM ET</span></h6>
+                            </div>
+
+                            <div class="location border border-[#97CDFF] w-[48%] sm:w-[225px] min-h-[228px] py-6 px-4 rounded-2xl"  style="background: radial-gradient(38.93% 38.36% at 23.7% 22.08%, #003655 0%, #071F2E 55.22%, #091821 100%);">
+                                <figure class="text-[#AFB9CB] font-roboto text-[18px] leading-[27px] font-normal space-y-6">
+                                    <img src="./assets/src/img/type=pin.png" alt="icon">
+                                    <figcaption>Location</figcaption>
+                                </figure>
+                                <h6 class="text-white font-nexaheavy font-black flex flex-col leading-[25px] mt-3">Highmark Stadium, Orchard Park, NY</h6>
+                            </div>
+
+                            <div class="watch border border-[#97CDFF] w-[48%] sm:w-[225px] min-h-[228px] py-6 px-4 rounded-2xl" style="background: radial-gradient(38.93% 38.36% at 23.7% 22.08%, #003655 0%, #071F2E 55.22%, #091821 100%);">
+                                <figure class="text-[#AFB9CB] font-roboto text-[18px] leading-[27px] font-normal space-y-6">
+                                    <img src="./assets/src/img/type=tv.png" alt="icon">
+                                    <figcaption>How to Watch</figcaption>
+                                </figure>
+                                <h6 class="text-white font-nexaheavy font-black flex flex-col leading-[25px] mt-3">CBS</h6>
+                            </div>
+
+                            <div class="stream border border-[#97CDFF] w-[48%] sm:w-[225px] min-h-[228px] py-6 px-4 rounded-2xl" style="background: radial-gradient(38.93% 38.36% at 23.7% 22.08%, #003655 0%, #071F2E 55.22%, #091821 100%);">
+                                <figure class="text-[#AFB9CB] font-roboto text-[18px] leading-[27px] font-normal space-y-6">
+                                    <img src="./assets/src/img/type=play.png" alt="icon">
+                                    <figcaption>Live Stream</figcaption>
+                                </figure>
+                                <h6 class="text-white font-nexaheavy font-black flex flex-col leading-[25px] mt-3">NFL Game Pass</h6>
+                            </div>
+                        </div>
+
+                        <div class="watch_full mt-14 w-[248px]"><a class="w-full font-nexaheavy font-black text-[18px] text-white flex items-center justify-center border border-white py-3 rounded-3xl space-x-1" href="#"><span>Watch Full Show</span><img src="/assets/src/img/Link_External.png" alt="share icon"></a></div>
+                    </div>
+                    <!--### Discover Block###-->
+
+                    <div class="discover_block mt-10">
+                        <div class="max-w-[707px]">
+                            <h2 class="text-white font-nexabold text-base xs:text-[24px] font-black mb-10">The NFL Show Host & Predictions About the Games</h2>
+
+                            <div id= "content_block" class="text-[#AFB9CB] font-roboto text-base leading-6 font-normal line-clamp-6"> <span class="block mb-2">
+                                When wanting to bet on NFL action, you can wing it, saying a prayer out to the heavens and hope for the best, or you can surround yourself with the best advice 
+                                around and then have a real and clear chance at making some solid money with your preferred NFL picks.</span>
+
+                            <span class="block mb-2"> Now, while we don’t condemn wagering on pure luck and 
+                                intuition, if that’s not your game then head on over to BetUS TV’s “The NFL Show” to get your fix of the best NFL expert picks, tailor made by our team 
+                                of handicapping experts who know a thing or two about making a few bucks off NFL action.</span> 
+
+                    <span class="block mb-2">Oh yeah, and when we say “a few bucks” we actually mean that 
+                                they are some of the most successful NFL wagering experts around and have made thousands of dollars off their NFL expert picks. </span> 
+
+                    <span class="block mb-3">So, don’t take too long to think and check out “The NFL Show” and get to winning.
+                    With the help of host Matt Landes, <span class="hidden" id="more-text">who brings to the table a plethora of knowledge when it comes to selecting the best NFL picks, 
+                    football fans will feel right at home with how Matt makes football betting sound so easy and achievable if you just take your time to 
+                    listen to the experts and go with the flow. Maybe you see some great numbers to go with some NFL picks against the spread, but you’re not
+                    completely sold on the idea just yet. That’s where Matt and his team at “The NFL Show” will come in very handy to show fans how to work 
+                    with the NFL predictions for the week and offer the best free NFL picks for everyone to use and make money with. </span>
+
+                    <span class="block mt-2 mb-2">Alongside Matt Landes, two more industry experts and football handicapping stars join the fray in our show. 
+                    On the one hand Scott Kellen, who with over 20 years of experience wagering on NFL action has become one of the most respected football 
+                    handicappers not just in the Las Vegas sports betting scene, but all around. Aside from Landes and Kellen, rounding out the group of NFL 
+                    betting experts is Las Vegas Cris. “LVC” is considered one of the most respectable voices when it comes to talking about NFL expert picks, 
+                    which makes him the best piece to round out a panel of industry proven experts to help all NFL betting fans make the most out of their wagering ventures.
+                    So without further ado, and much money to be made with the best NFL 
+                    picks around, head on over to BetUS TV to check out “The NFL Show” and then over to BetUS 
+                    sportsbook to start making some real, NFL all-star type money right now.</span></span></div>
+
+                            <button id="toggle-btn" class="mt-4 text-[#007BFF] font-nexabold font-black focus:outline-none">Show More</button>
+                            <button id="hide-btn" class="hidden mt-4 text-[#007BFF] font-nexabold font-black focus:outline-none">Show Less</button>    
+                        </div>
+                    </div>
+
+
+                    <!--### FAQ Block###-->
+                    <div class="faq_container mt-10 mb-16">
+                        <h2 class="text-white font-nexabold text-base xs:text-3xl font-black">FAQ</h2>
+                        <div class="space-y-4 mt-12 max-w-[707px]">
+                        <details class="bg-[#001934] p-6 group rounded-xl" open>
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h5 class="text-[18px] text-white font-black font-nexaheavy leading-[21.6px]">
+                                    What types of sports TV shows can I find on your website?
+                                </h5>
+
+                                <span class="relative flex-shrink-0 ml-1.5 w-5 h-5">
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" src="./assets/src/img/add-circle.png" />
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-0 group-open:opacity-100" src="/assets/src/img/minus-cirlce.png" alt="" >
+                                </span>
+                            </summary>
+
+                            <p class="mt-4 text-[#AFB9CB] font-roboto font-normal leading-6">
+                                You can find a diverse range of sports TV shows on our website, catering to various sports enthusiasts. Our content includes documentaries, talk shows, 
+                                behind-the-scenes features, and exclusive athlete interviews. Whether you're into football, basketball, soccer, or any other sport, we have engaging content for you.
+                            </p>
+                        </details>
+
+                        <details class="bg-[#001934] p-6 group rounded-xl">
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h5 class="text-[18px] text-white font-black font-nexaheavy leading-[21.6px]">
+                                    What types of sports TV shows can I find on your website?
+                                </h5>
+
+                                <span class="relative flex-shrink-0 ml-1.5 w-5 h-5">
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" src="./assets/src/img/add-circle.png" />
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-0 group-open:opacity-100" src="/assets/src/img/minus-cirlce.png" alt="" >
+                                </span>
+                            </summary>
+
+                            <p class="mt-4 text-[#AFB9CB] font-roboto font-normal leading-6">
+                                You can find a diverse range of sports TV shows on our website, catering to various sports enthusiasts. Our content includes documentaries, talk shows, 
+                                behind-the-scenes features, and exclusive athlete interviews. Whether you're into football, basketball, soccer, or any other sport, we have engaging content for you.
+                            </p>
+                        </details>
+
+                        <details class="bg-[#001934] p-6 group rounded-xl">
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h5 class="text-[18px] text-white font-black font-nexaheavy leading-[21.6px]">
+                                    What types of sports TV shows can I find on your website?
+                                </h5>
+
+                                <span class="relative flex-shrink-0 ml-1.5 w-5 h-5">
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" src="./assets/src/img/add-circle.png" />
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-0 group-open:opacity-100" src="/assets/src/img/minus-cirlce.png" alt="" >
+                                </span>
+                            </summary>
+
+                            <p class="mt-4 text-[#AFB9CB] font-roboto font-normal leading-6">
+                                You can find a diverse range of sports TV shows on our website, catering to various sports enthusiasts. Our content includes documentaries, talk shows, 
+                                behind-the-scenes features, and exclusive athlete interviews. Whether you're into football, basketball, soccer, or any other sport, we have engaging content for you.
+                            </p>
+                        </details>
+
+                        <details class="bg-[#001934] p-6 group rounded-xl">
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h5 class="text-[18px] text-white font-black font-nexaheavy leading-[21.6px]">
+                                    What types of sports TV shows can I find on your website?
+                                </h5>
+
+                                <span class="relative flex-shrink-0 ml-1.5 w-5 h-5">
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" src="./assets/src/img/add-circle.png" />
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-0 group-open:opacity-100" src="/assets/src/img/minus-cirlce.png" alt="" >
+                                </span>
+                            </summary>
+
+                            <p class="mt-4 text-[#AFB9CB] font-roboto font-normal leading-6">
+                                You can find a diverse range of sports TV shows on our website, catering to various sports enthusiasts. Our content includes documentaries, talk shows, 
+                                behind-the-scenes features, and exclusive athlete interviews. Whether you're into football, basketball, soccer, or any other sport, we have engaging content for you.
+                            </p>
+                        </details>
+
+                        <details class="bg-[#001934] p-6 group rounded-xl">
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h5 class="text-[18px] text-white font-black font-nexaheavy leading-[21.6px]">
+                                    What types of sports TV shows can I find on your website?
+                                </h5>
+
+                                <span class="relative flex-shrink-0 ml-1.5 w-5 h-5">
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" src="./assets/src/img/add-circle.png" />
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-0 group-open:opacity-100" src="/assets/src/img/minus-cirlce.png" alt="" >
+                                </span>
+                            </summary>
+
+                            <p class="mt-4 text-[#AFB9CB] font-roboto font-normal leading-6">
+                                You can find a diverse range of sports TV shows on our website, catering to various sports enthusiasts. Our content includes documentaries, talk shows, 
+                                behind-the-scenes features, and exclusive athlete interviews. Whether you're into football, basketball, soccer, or any other sport, we have engaging content for you.
+                            </p>
+                        </details>
+
+                        <details class="bg-[#001934] p-6 group rounded-xl">
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h5 class="text-[18px] text-white font-black font-nexaheavy leading-[21.6px]">
+                                    What types of sports TV shows can I find on your website?
+                                </h5>
+
+                                <span class="relative flex-shrink-0 ml-1.5 w-5 h-5">
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0" src="./assets/src/img/add-circle.png" />
+
+                                    <img class="absolute inset-0 w-5 h-5 opacity-0 group-open:opacity-100" src="/assets/src/img/minus-cirlce.png" alt="" >
+                                </span>
+                            </summary>
+
+                            <p class="mt-4 text-[#AFB9CB] font-roboto font-normal leading-6">
+                                You can find a diverse range of sports TV shows on our website, catering to various sports enthusiasts. Our content includes documentaries, talk shows, 
+                                behind-the-scenes features, and exclusive athlete interviews. Whether you're into football, basketball, soccer, or any other sport, we have engaging content for you.
+                            </p>
+                        </details>
+
+                        
+                        </div>
+                    </div>
+                    </div>
+
+                </div>           
+            </div>
+
+        
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+<!--### Footer ###-->
+<footer class="footer bg-[#001934] py-8 px-2">
+    <div class="footer_block max-w-[1430px] mx-auto">
+        <div class="footer_first_block flex flex-wrap justify-between">
+            <div class="w-full md:w-[165px]"><img src="/assets/src/img/logo.png" alt="logo image"></div>
+            
+            <ul class="first_nav font-nexaregular font-black text-white space-y-5 w-1/2 md:w-[15%] mt-6 md:mt-0">
+                <li><a href="#">NFL</a></li>
+                <li><a href="#">NCAAF</a></li>
+                <li><a href="#">NBA</a></li>
+                <li><a href="#">NCAAB</a></li>
+                <li><a href="#">UFC</a></li>
+            </ul>
+
+            <ul class="second_nav font-nexaregular font-black text-white space-y-5 w-1/2 md:w-[15%] mt-6 md:mt-0">
+                <li><a href="#">Champions League</a></li>
+                <li><a href="#">Premier League</a></li>
+                <li><a href="#">La Liga</a></li>
+                <li><a href="#">Serie A</a></li>
+            </ul>
+
+            <ul class="third_nav font-nexaregular font-black text-white space-y-5 w-1/2 md:w-[15%] mt-6 md:mt-0">
+                <li><a href="#">World Cup</a></li>
+                <li><a href="#">Bundesliga</a></li>
+                <li><a href="#">Europa League</a></li>
+                <li><a href="#">Boxing</a></li>
+            </ul>
+
+
+            <ul class="last_nav font-nexaregular font-black text-white space-y-5 w-1/2 md:w-[15%] mt-6 md:mt-0">
+                <li><a href="#">MLB</a></li>
+                <li><a href="#">3 Dog</a></li>
+                <li><a href="#">More Sports</a></li>
+                <li><a href="#">How to Bet</a></li>
+            </ul>
+
+
+            <div class="social-icons flex space-x-6 w-1/2 md:w-[10%] mt-6 md:mt-0">
+                <a href=""><img src="/assets/src/img/youtube_icon.png" alt="youtube icon"></a>
+                <a href=""><img src="/assets/src/img/twitter_icon.png" alt="twitter icon"></a>
+                <a href=""><img src="/assets/src/img/facebook_icon.png" alt="facebook icon"></a>
+            </div>
+
+
+        </div>
+
+        <div class="second_block mt-6 text-[#AFB9CB] font-roboto text-[12px] leading-[18px]">
+            <p>© 1994 - 2022 BetUS.. All Rights Reserved The BetUS Brand and Logo are trademarks of BetUS. 
+            BetUS is a premier online sportsbook and gambling destination. BetUS is a fully licensed sportsbook providing a 
+            reliable and secure sports betting service to millions of satisfied online betting customers world wide since 1994. 
+            BetUS offers football betting, live and NFL odds all season long.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<!-- NOTE: prior to v2.2.1 tiny-slider.js need to be in <body> -->
+
+
+
+
+    <!--Swiper js-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+
+   
+    <!-- Custom Scripts -->
+    <script src="./js/app.js"></script>
+    
+    
+</body>
+</html>
