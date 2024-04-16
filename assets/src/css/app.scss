@@ -98,7 +98,7 @@
   justify-content: end;
   position: relative;
   top: -40px;
-  z-index: 10;
+  z-index: 20;
 }
 
 .top_arrows [data-controls="next"] {
@@ -124,13 +124,13 @@
   }
 }
 
-.welcome_hub {
+.welcome_box {
   background-image: url("/assets/src/img/shades.png");
   background-repeat: no-repeat;
   background-position: center right;
 }
 @media (max-width: 991px) {
-  .welcome_hub {
+  .welcome_box {
     background-image: url("/assets/src/img/shades-mob.png");
     background-position: center left;
   }
@@ -154,13 +154,45 @@
   align-items: center;
 } */
 
-.swiper-slide {
-  width: 100%;
+.showSwiper .swiper-slide {
+  margin: 0;
+}
+
+.show_video_container {
+  margin: 0;
+}
+
+.showSwiper .swiper-button-next,
+.showSwiper .swiper-button-prev {
+  width: 40px;
+}
+
+.showSwiper .swiper-button-disabled {
+  display: none;
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
   content: "";
+}
+.showSwiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#next_btn_swiper:before {
+  background-image: url(../img/shadow.png);
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 370px;
+  position: absolute;
+  right: -10px;
+  width: 400px;
+  z-index: -1;
 }
 
 /**
@@ -199,5 +231,11 @@ show page Latest videos slider control
     gap: 35px;
     padding-right: 20px;
     margin-top: -25px;
+  }
+}
+
+@media (max-width: 768px) {
+  #next_btn_swiper:before {
+    opacity: 0;
   }
 }

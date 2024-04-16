@@ -43,37 +43,46 @@ domReady(() => {
   });
 
   /** slider for home page header */
-  var swiper = new Swiper(".mySwiper", {
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-
-  //initialize tiny slider
-  let slider = tns({
-    container: ".my-slider",
-    controlsText: [
-      '<img src="/assets/src/img/prev_icon.png" />',
-      '<img src="/assets/src/img/next_icon.png" />',
-    ],
-    loop: true,
-    mouseDrag: true,
-    gutter: 20,
-    controls: true,
-    fixedWidth: 80,
-    responsive: {
-      600: {
-        gutter: 20,
-        fixedWidth: 194,
+  if (document.querySelector(".mySwiper")) {
+    // Initialize Swiper
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
       },
-    },
-  });
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
 
+  // Check if the slider container exists for desktop logo show
+  if (document.querySelector(".my-slider")) {
+    // Initialize tiny slider
+    let slider = tns({
+      container: ".my-slider",
+      controlsText: [
+        '<img src="/assets/src/img/prev_icon.png" />',
+        '<img src="/assets/src/img/next_icon.png" />',
+      ],
+      loop: true,
+      mouseDrag: true,
+      gutter: 20,
+      controls: true,
+      fixedWidth: 80,
+      responsive: {
+        600: {
+          gutter: 20,
+          fixedWidth: 194,
+        },
+      },
+    });
+  }
+
+  /**
+   * Lives Slider Home Page
+   */
   // Check if the element with class "lives-slider" exists
   var livesSliderExist = document.querySelector(".lives-slider");
 
@@ -98,6 +107,10 @@ domReady(() => {
       },
     });
   }
+
+  /**
+   * Youtube shorts slider home page
+   */
 
   // Check if the element with class "shorts-slider" exists
   var shortsSliderExist = document.querySelector(".shorts-slider");
@@ -135,9 +148,12 @@ domReady(() => {
     },
   }); */
 
-  var swiper2 = new Swiper(".showSwiper", {
+  /**
+   * Show Slider Home Page
+   */
+
+  var swiper_show = new Swiper(".showSwiper", {
     slidesPerView: "auto",
-    spaceBetween: 10,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -145,6 +161,11 @@ domReady(() => {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: {
+        spaceBetween: 10,
+      },
     },
   });
 
@@ -189,19 +210,21 @@ domReady(() => {
   const hideBtnEl = document.getElementById("hide-btn");
   const contentBlk = document.getElementById("content_block");
 
-  toggleBtnEl.addEventListener("click", () => {
-    moreTextEl.classList.toggle("hidden");
-    toggleBtnEl.classList.toggle("hidden");
-    hideBtnEl.classList.toggle("hidden");
-    contentBlk.classList.toggle("line-clamp-6");
-  });
+  if (contentBlk) {
+    toggleBtnEl.addEventListener("click", () => {
+      moreTextEl.classList.toggle("hidden");
+      toggleBtnEl.classList.toggle("hidden");
+      hideBtnEl.classList.toggle("hidden");
+      contentBlk.classList.toggle("line-clamp-6");
+    });
 
-  hideBtnEl.addEventListener("click", () => {
-    moreTextEl.classList.toggle("hidden");
-    toggleBtnEl.classList.toggle("hidden");
-    hideBtnEl.classList.toggle("hidden");
-    contentBlk.classList.toggle("line-clamp-6");
-  });
+    hideBtnEl.addEventListener("click", () => {
+      moreTextEl.classList.toggle("hidden");
+      toggleBtnEl.classList.toggle("hidden");
+      hideBtnEl.classList.toggle("hidden");
+      contentBlk.classList.toggle("line-clamp-6");
+    });
+  }
 
   /***
    * Show page banner show more/less
@@ -228,6 +251,29 @@ domReady(() => {
   }
 
   /***
-   * Load more Game previews in show page
+   * Related videos in the video page section
+   * to make them slider in the mobile section
    */
+
+  if (document.querySelector(".related_video_Swiper")) {
+    // Initialize Swiper
+    var swiper_rel_video = new Swiper(".related_video_Swiper", {
+      items: 6,
+      loop: true,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
+
+  //hide shadow from view moe button on show slider on home page
+
+  const shadow_block = document.getElementById("shadow_container_block");
+  const disable_btn = document.getElementById("next_btn_swiper");
+
+  if (disable_btn.classList.contains("swiper-button-disabled") === true) {
+    console.log("hello");
+  }
 });
